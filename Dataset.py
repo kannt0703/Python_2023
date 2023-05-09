@@ -4,6 +4,7 @@ from sklearn.utils import shuffle
 import numpy as np
 import json
 import math
+from Config import *
 
 class Dataset:
     def __init__(self):
@@ -34,7 +35,7 @@ class Dataset:
             ordered_data = []
             for month in months:
                 print("Loading month: ",month)
-                file_path = "Dataset/" + coin_name + '/' + month +"__"+ coin_name + '.json'
+                file_path = DATASET_DIR + coin_name + '/' + month +"__"+ coin_name + '.json'
                 with open(file_path) as json_file:
                     raw_data = json.load(json_file)
 
